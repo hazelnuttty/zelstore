@@ -1,0 +1,333 @@
+:root {
+  --primary: #00bcd4;
+  --primary-dark: #008ba3;
+  --text-dark: #1c1c1e;
+  --text-light: #6e6e73;
+  --bg: linear-gradient(to right, #f4f7f6, #e9f4f5);
+  --white: #ffffffcc;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-blur: blur(12px);
+  --border-glow: rgba(0, 188, 212, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.5s ease;
+}
+
+/* Header */
+header {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1rem 2rem;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav a {
+  margin-left: 2rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--primary);
+  transition: 0.4s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #dff8fa 0%, #ffffff 100%);
+}
+
+.hero h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #00bcd4, #0097a7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+/* Button */
+.btn {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.9rem 2rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px var(--border-glow);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+/* Products */
+.products {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.products.featured {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 188, 212, 0.4);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.product-info {
+  padding: 1.2rem 1.4rem;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.product-info h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.product-info span {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+/* Buat wrapper flex */
+.sections-wrapper {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+/* Hilangkan styling di section langsung */
+section#about,
+section#contact {
+  flex: 1 1 350px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; /* hilangin padding dari sini */
+  background: none;
+  text-align: center;
+}
+
+/* Semua styling dipindah ke .container */
+.container {
+  max-width: 100%;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  padding: 4rem 2rem;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+section#about p,
+section#contact p {
+  max-width: 600px;
+  margin: 1rem auto 0;
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+/* Footer */
+footer {
+  background: var(--primary-dark);
+  color: white;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  width: 100vw;       /* full viewport width */
+  position: relative; /* supaya tetap normal */
+  left: 50%;          /* bantu supaya melebar full */
+  right: 50%;
+  margin-left: -50vw; /* offset supaya nempel ke kiri */
+  margin-right: -50vw;/* offset supaya nempel ke kanan */
+  box-sizing: border-box;
+}
+
+footer .socials i {
+  font-size: 1.4rem;
+  margin: 0 0.7rem;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+footer .socials i:hover {
+  transform: scale(1.3);
+  color: #c0f7ff;
+}
+
+footer p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .hero h2 {
+    font-size: 2.3rem;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+  }
+
+  .products {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  .product-card img {
+    height: 150px;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.6rem;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: -100%;
+    background-color: #111;
+    width: 100%;
+    padding: 1rem 0;
+    transition: left 0.3s ease-in-out;
+  }
+
+  nav.active {
+    left: 0;
+  }
+
+  nav a {
+    padding: 1rem;
+    display: block;
+    border-top: 1px solid #333;
+    margin: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+  .typing {
+      animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: orange }
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+}
