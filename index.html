@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Zelstore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
+  <header>
+<h1 id="title"><i class="fas fa-store"></i> <span id="storeName"></span></h1>
+  <nav>
+    <nav>
+      <a href="#home" tabindex="0"><i class="fas fa-home"></i> Home</a>
+      <a href="#products" tabindex="0"><i class="fas fa-tags"></i> Produk</a>
+      <a href="#about" tabindex="0"><i class="fas fa-address-card"></i> Tentang</a>
+      <a href="#contact" tabindex="0"><i class="fas fa-headset"></i> Kontak</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>Selamat Datang di Zelstore</h2>
+    <p>Temukan produk digital dengan harga terjangkau dan kualitas terbaik.</p>
+    <button class="btn" aria-label="Lihat Produk" id="btnProducts">
+      <i class="fas fa-shopping-bag"></i> Lihat Produk
+    </button>
+  </section>
+
+  <section class="products-section" id="products" aria-label="Daftar Produk">
+
+    <h2 class="section-title"></h2>
+    <div class="products featured-products">
+      <div class="product-card" tabindex="0" onclick="showProductDetails('Osint Toolkit', 'Rp150.000')">
+        <img src="https://files.catbox.moe/jbk5al.jpg" alt="Osint Toolkit">
+        <div class="product-info">
+          <h3>Osint Toolkit</h3>
+          <span>Rp150.000</span>
+        </div>
+      </div>
+      <div class="product-card" tabindex="0" onclick="showProductDetails('Portofolio', 'Rp80.000')">
+        <img src="https://files.catbox.moe/jbk5al.jpg" alt="Portofolio Web">
+        <div class="product-info">
+          <h3>Portofolio Web</h3>
+          <span>Rp80.000</span>
+        </div>
+      </div>
+      <div class="product-card" tabindex="0" onclick="showProductDetails('Sweater Rajut', 'Rp210.000')">
+        <img src="https://files.catbox.moe/jbk5al.jpg" alt="Canva Desain">
+        <div class="product-info">
+          <h3>Canva Design</h3>
+          <span>Rp210.000</span>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title"></h2>
+    <div class="products all-products">
+      <div class="product-card" tabindex="0" onclick="showProductDetails('DuckDuckgo Scraper', 'Rp90.000')">
+        <img src="https://files.catbox.moe/jbk5al.jpg" alt="DuckDuckgo Sraper">
+        <div class="product-info">
+          <h3>DuckDuckgo Scraper</h3>
+          <span>Rp90.000</span>
+        </div>
+      </div>
+      <div class="product-card" tabindex="0" onclick="showProductDetails('Fix Script', 'Rp75.000')">
+        <img src="https://files.catbox.moe/jbk5al.jpg" alt="Fix Script">
+        <div class="product-info">
+          <h3>Fix Script Bot Wa</h3>
+          <span>Rp75.000</span>
+        </div>
+      </div>
+      <div class="product-card" tabindex="0" onclick="showProductDetails('Rekomendasi Tools', 'Rp1.000')">
+        <img src="https://files.catbox.moe/jbk5al.jpg" alt="Aesthetic Mug">
+        <div class="product-info">
+          <h3>Rekomendasi Tools</h3>
+          <span>Rp1.000</span>
+        </div>
+      </div>
+    </div>
+    
+<h2 class="section-title"></h2>
+    <div class="products all-products">
+      <div class="product-card" tabindex="0" onclick="showProductDetails('Jasa Bikin Web', 'Rp100.000')">
+        <img src="https://files.catbox.moe/jbk5al.jpg" alt="Jasa Bikin Web">
+        <div class="product-info">
+          <h3>Jasa Bikin Web</h3>
+          <span>Rp100.000</span>
+        </div>
+      </div>
+      <div class="product-card" tabindex="0" onclick="showProductDetails('Node.js Fixed', 'Rp75.000')">
+        <img src="https://files.catbox.moe/jbk5al.jpg" alt="Node.js Fixed">
+        <div class="product-info">
+          <h3>Node.Js Fixed</h3>
+          <span>Rp75.000</span>
+        </div>
+      </div>
+      <div class="product-card" tabindex="0" onclick="showProductDetails('Portofolio Design', 'Rp45.000')">
+        <img src="https://files.catbox.moe/jbk5al.jpg" alt="Portofolio Design">
+        <div class="product-info">
+          <h3>Portofolio Design</h3>
+          <span>Rp45.000</span>
+        </div>
+      </div>
+    </div>    
+  </section>
+
+<div class="sections-wrapper">
+  <section id="about">
+    <div class="container">
+      <h2>Tentang Kami</h2>
+      <p>
+        kami juga menyediakan produk digital seperti toolkit OSINT, website, dan layanan digital lainnya  
+  yang dirancang untuk membantu kamu bekerja lebih efisien dan modern.  
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Hubungi Kami</h2>
+      <p>
+        Jika kamu punya pertanyaan atau ingin kerja sama, silakan hubungi kami melalui email di 
+        <strong>hazelnutoffc@gmail.com</strong> atau DM kami di Instagram @stc_fay
+      </p>
+    </div>
+  </section>
+</div>
+
+   
+  </section>
+  <footer>
+    <div class="socials" aria-label="Media Sosial">
+      <i class="fab fa-instagram" tabindex="0" title="Instagram"></i>
+      <i class="fab fa-tiktok" tabindex="0" title="TikTok"></i>
+      <i class="fab fa-whatsapp" tabindex="0" title="WhatsApp"></i>
+    </div>
+    <p>&copy; 2025 Zelstore. Semua Hak Dilindungi.</p>
+  </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="src/script.js"></script>
+</body>
+</html>
